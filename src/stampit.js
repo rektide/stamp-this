@@ -119,7 +119,8 @@ const stampit = function stampit(options) {
   }
 
   const factory = function Factory(refs, ...args) {
-    let isGlobal = this === global || this === factory;
+    let isGlobal = !this || this === global || this === factory;
+    console.log(isGlobal, isGlobal || this);
     let instance = isGlobal ?
       mixin(create(fixed.methods), fixed.refs, refs) :
       mixin(this, create(fixed.methods), fixed.refs, refs);
