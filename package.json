@@ -1,11 +1,8 @@
 {
-  "name": "stampit",
+  "name": "stampthis",
   "version": "2.1.1",
-  "description": "Create objects from reusable, composable behaviors.",
-  "author": {
-    "name": "Eric Elliott",
-    "url": "https://ericelliottjs.com"
-  },
+  "description": "Enrich or create objects with reusable, composable behaviors. Fork of StampIt.",
+  "author": "rektide de la faye",
   "main": "./dist/stampit.js",
   "keywords": [
     "object",
@@ -16,11 +13,14 @@
     "oo",
     "node",
     "factory",
-    "class"
+    "class",
+    "mixin",
+    "incremental",
+    "gradual"
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:stampit-org/stampit.git"
+    "url": "git@github.com:rektide/stamp-this.git"
   },
   "dependencies": {
     "lodash": "^3.9.1",

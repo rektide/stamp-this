@@ -119,7 +119,11 @@ const stampit = function stampit(options) {
   }
 
   const factory = function Factory(refs, ...args) {
-    let instance = mixin(create(fixed.methods), fixed.refs, refs);
+    let isGlobal = !this || this === global || this === factory;
+    console.log(isGlobal, isGlobal || this);
+    let instance = isGlobal ?
+      mixin(create(fixed.methods), fixed.refs, refs) :
+      mixin(this, create(fixed.methods), fixed.refs, refs);
     mergeUnique(instance, fixed.props); // props are safely merged into refs
 
     let nextPromise = null;
